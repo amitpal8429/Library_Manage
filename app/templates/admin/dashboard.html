@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Admin Dashboard</h2>
+<a href="{{ url_for('admin.add_event') }}" class="btn btn-success mb-3">Add New Event</a>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Time</th>
+      <th>Capacity</th>
+      <th>Booked</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for event in events %}
+    <tr>
+      <td>{{ event.title }}</td>
+      <td>{{ event.time }}</td>
+      <td>{{ event.capacity }}</td>
+      <td>{{ event.booked }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
