@@ -1,0 +1,220 @@
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #212529;
+    background-color: #f9f9f9;
+    scroll-behavior: smooth;
+    line-height: 1.6;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    color: #198754;
+  }
+  
+
+  .navbar {
+    padding: 1rem 0;
+    transition: all 0.3s ease-in-out;
+    z-index: 1000;
+  }
+  
+  .navbar-brand {
+    font-size: 1.7rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  
+  .navbar-nav .nav-link {
+    font-size: 1rem;
+    color: white !important;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #ffc107 !important;
+    transform: scale(1.05);
+  }
+  
+
+  .hero {
+    background: linear-gradient(135deg, #198754, #28a745);
+    color: white;
+    padding: 4rem 1rem;
+    position: relative;
+  }
+  
+  .hero .profile-img {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid white;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease;
+  }
+  
+  .hero .profile-img:hover {
+    transform: scale(1.05);
+  }
+
+  section h3 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    position: relative;
+  }
+  
+  section h3::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #198754;
+    margin: 12px auto 0;
+    border-radius: 10px;
+  }
+
+  .card {
+    border: none;
+    border-radius: 16px;
+    padding: 2rem;
+    background: #ffffff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+  
+  .card::before {
+    content: "";
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 120px;
+    height: 120px;
+    background: rgba(25, 135, 84, 0.05);
+    transform: rotate(45deg);
+    z-index: 0;
+  }
+  
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  }
+  
+  .card * {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .card ul {
+    padding-left: 1.2rem;
+  }
+  
+  .card ul li {
+    margin-bottom: 0.6rem;
+  }
+
+  #about .list-unstyled li {
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+  }
+  
+
+  #skills .col-md-4 {
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+  }
+  
+  #skills .col-md-4:hover {
+    transform: translateY(-5px);
+  }
+  
+  #skills h6 {
+    font-size: 1.2rem;
+    color: #0d6efd;
+    margin-bottom: 10px;
+  }
+  
+  #skills p {
+    font-size: 1rem;
+    color: #343a40;
+  }
+  
+  input, textarea {
+    border-radius: 10px !important;
+    padding: 12px 14px;
+    border: 1px solid #ced4da;
+    font-size: 1rem;
+    transition: 0.3s;
+  }
+  
+  input:focus, textarea:focus {
+    border-color: #198754;
+    box-shadow: 0 0 6px rgba(25, 135, 84, 0.3);
+    outline: none;
+  }
+
+  .btn-primary, .btn-success {
+    border-radius: 10px;
+    padding: 10px 24px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s;
+  }
+  
+  .btn-primary:hover {
+    background-color: #084298;
+    transform: translateY(-2px);
+  }
+  
+  .btn-success:hover {
+    background-color: #146c43;
+    transform: translateY(-2px);
+  }
+  
+
+  footer {
+    background-color: #198754;
+    color: white;
+    padding: 1rem 0;
+    font-size: 0.95rem;
+  }
+  
+
+  .alert {
+    border-radius: 10px;
+    font-weight: 500;
+  }
+  
+
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 1.8rem;
+    }
+  
+    .hero .profile-img {
+      width: 120px;
+      height: 120px;
+    }
+  
+    .navbar-nav .nav-link {
+      margin-left: 0;
+      padding: 8px 0;
+    }
+  }
+  .card {
+    border: none;
+    border-radius: 16px;
+    padding: 2rem;
+    background: #ffffff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+  

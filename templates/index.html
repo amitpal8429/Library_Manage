@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Amit Pal - Portfolio</title>
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-success shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">Amit Pal</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <section class="hero text-center py-5 bg-light">
+    
+    <h1 class="fw-bold">Amit Pal</h1>
+    <p class="lead">Full Stack Developer </p>
+  </section>
+
+<section id="about" class="py-5 bg-light">
+    <div class="container">
+      <h3 class="text-center mb-4">About Me</h3>
+      <div class="card p-4">
+        <div class="row">
+          <div class="col-md-6">
+            <p>
+              Recent graduate with a BCA degree, skilled in building full-stack web apps using Python (Flask), HTML5, and Bootstrap. Passionate about creating interactive user experiences and scalable backends.
+            </p>
+          </div>
+          <div class="col-md-6">
+            <ul class="list-unstyled">
+              <li><strong>Age:</strong> 21</li>
+              <li><strong>Email:</strong> amitpal8429755927@example.com</li>
+              <li><strong>Phone:</strong> +91 8429755927</li>
+              <li><strong>Location:</strong> Auraiya, UP, India</li>
+              <li><strong>Languages:</strong> English, Hindi</li>
+
+            
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <section id="education" class="py-5 bg-light">
+    <div class="container">
+      <h3 class="text-center mb-4">Education</h3>
+      <div class="card p-4">
+        <h5 class="fw-bold">Bachelor in Computer Application</h5>
+        <p class="text-muted">Vivekanand Institute of Management and Technology</p>
+        <ul>
+          <li>Created a responsive web application with Flask and Bootstrap.</li>
+          <li>Built a React E-Commerce Application.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
+<section id="skills" class="py-5">
+    <div class="container">
+      <h3 class="text-center mb-4">Professional Skills</h3>
+      <div class="card p-4">
+        <div class="row text-center">
+          <div class="col-md-4">
+            <h6>Languages</h6>
+            <p>Python, JavaScript</p>
+          </div>
+          <div class="col-md-4">
+            <h6>Tools</h6>
+            <p>VS Code, GitHub, Excel</p>
+          </div>
+          <div class="col-md-4">
+            <h6>Technologies</h6>
+            <p>Flask, HTML5, CSS, React, Bootstrap</p>
+          </div>
+          <div class="col-md-4">
+            <h6>DataBase</h6>
+            <p>PostgreSQL,ORM Sqlalchamy</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+
+  <section id="contact" class="py-5 bg-light">
+    <div class="container">
+      <h3 class="text-center mb-4">Contact Me</h3>
+
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          {% for category, message in messages %}
+            <div class="alert alert-{{ category }} text-center">{{ message }}</div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+
+      <div class="row">
+        <div class="col-md-6">
+          <form method="POST" action="{{ url_for('sendemail') }}">
+            <div class="mb-3">
+              <input type="text" name="name" class="form-control" placeholder="Your Name" required />
+            </div>
+            <div class="mb-3">
+              <input type="text" name="subject" class="form-control" placeholder="Subject" required />
+            </div>
+            <div class="mb-3">
+              <input type="email" name="email" class="form-control" placeholder="Your Email" required />
+            </div>
+            <div class="mb-3">
+              <textarea name="message" class="form-control" placeholder="Your Message" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+            <a href="https://drive.google.com/uc?export=download&id=1ZM9F6fp4gtLgXfo886HhizZV0OiqPTix" class="btn btn-success ms-2" download>Download CV</a>
+          </form>
+        </div>
+        <div class="col-md-6">
+          <h5>Address</h5>
+          <p>Auraiya, Uttar Pradesh</p>
+          <h5>Phone</h5>
+          <p>+91 8429755927</p>
+          <h5>Email</h5>
+          <p>amitpal8429755927@example.com</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ 
+  <footer class="bg-dark text-white text-center py-3">
+    &copy; 2025 Amit Pal. All Rights Reserved. <br />
+    <a href="https://github.com/amitpal8429" target="_blank" class="text-white text-decoration-none">
+      <i class="bi bi-github me-1"></i>GitHub clickhere
+    </a>
+  </footer>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
