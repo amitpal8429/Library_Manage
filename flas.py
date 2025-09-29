@@ -63,7 +63,7 @@ def update_user(id):
         user.name = request.form['name']
         user.email = request.form['email']
 
-        if request.form['password']:  # update only if provided
+        if request.form['password']:  
             user.password = generate_password_hash(request.form['password'])
         
         db.session.commit()
