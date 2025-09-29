@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card mx-auto p-4" style="max-width: 500px;">
+    <h4 class="mb-3 text-center">Edit User</h4>
+    <form method="POST">
+        <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="text" name="name" class="form-control" value="{{ user.name }}" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="email" name="email" class="form-control" value="{{ user.email }}" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">New Password (leave blank if not changing)</label>
+            <input type="password" name="password" class="form-control">
+        </div>
+        <div class="d-flex justify-content-between">
+            <button type="submit" class="btn btn-primary btn-custom">Update</button>
+            <a href="{{ url_for('inde') }}" class="btn btn-secondary btn-custom">Cancel</a>
+        </div>
+    </form>
+</div>
+{% endblock %}
