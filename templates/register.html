@@ -1,0 +1,46 @@
+{% extends "basee.html" %}
+
+{% block content %}
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-5">
+      <div class="card shadow">
+        <div class="card-body">
+          <h3 class="card-title text-center mb-4">Register</h3>
+
+          {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              {% for cat, msg in messages %}
+                <div class="alert alert-{{ 'danger' if cat=='danger' else cat }} alert-dismissible fade show" role="alert">
+                  {{ msg }}
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+
+          <form method="POST" action="{{ url_for('register') }}">
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
+            </div>
+            <div class="d-grid">
+              <button type="submit" class="btn btn-success">Register</button>
+            </div>
+          </form>
+
+          <p class="mt-3 text-center">Already have an account? <a href="{{ url_for('home') }}">Login here</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

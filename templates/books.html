@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head><title>Books</title></head>
+<body>
+  <h2>All Books</h2>
+  <a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+  <form method="GET" action="{{ url_for('books_list') }}">
+    <input type="text" name="q" placeholder="Search by title or author" value="{{ q }}">
+    <button type="submit">Search</button>
+  </form>
+
+  <table border="1">
+    <tr><th>Title</th><th>Author</th><th>Copies</th><th>Available</th><th>Action</th></tr>
+    {% for book in books %}
+    <tr>
+      <td>{{ book.title }}</td>
+      <td>{{ book.author }}</td>
+      <td>{{ book.copies }}</td>
+      <td>{{ book.available }}</td>
+      <td><a href="{{ url_for('issue', book_id=book.id) }}">Issue</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>
